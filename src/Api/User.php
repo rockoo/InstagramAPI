@@ -13,8 +13,7 @@ class User extends InstagramAbstract {
      */
     public function getInfo($userId = 'self')
     {
-        // https://api.instagram.com/v1/users/{user-id}/?access_token=ACCESS-TOKEN
-
+        return $this->adapter->get(sprintf('%s/v1/users/%s', self::ENDPOINT, $userId));
     }
 
     /**
@@ -22,7 +21,7 @@ class User extends InstagramAbstract {
      */
     public function getFeed()
     {
-        // https://api.instagram.com/v1/users/self/feed?access_token=ACCESS-TOKEN
+        return $this->adapter->get(sprintf('%s/v1/users/self/feed', self::ENDPOINT));
     }
 
     /**
@@ -30,9 +29,22 @@ class User extends InstagramAbstract {
      * To get the most recent media published by the owner of the access token,
      * you can use self instead of the user-id.
      */
-    public function getRecentMedia($userId = 'self')
+    public function getRecentMedia($userId = 'self', $options = [])
     {
-        // https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=ACCESS-TOKEN
+        $argsBucket = ['count', 'min_timestamp', 'max_timestamp', 'min_id', 'max_id'];
+        $appendArgs = '';
+
+        if(count($options) > 0) {
+            $appendArgs = '?';
+            foreach($options as $k=>$v) {
+                if( !in_array($k, $argsBucket)) throw new InstagramException("You have passed an unknow argument {$k}");
+                $appendArgs .= "{$k}={$v}&";
+            }
+
+            $appendArgs = rtrim($appendArgs, '&');
+        }
+
+        return $this->adapter->get(sprintf('%s/v1/users/%s/media/recent'.$appendArgs, self::ENDPOINT, $userId));
     }
 
     /**
@@ -44,7 +56,7 @@ class User extends InstagramAbstract {
      */
     public function getLiked($count = 20)
     {
-        // https://api.instagram.com/v1/users/self/media/liked?access_token=ACCESS-TOKEN
+        return $this->adapter->get(sprintf('%s/v1/users/self/media/liked?count='.$count, self::ENDPOINT));
     }
 
     /**
@@ -55,8 +67,7 @@ class User extends InstagramAbstract {
      */
     public function searchForUser($query = '', $count = 20)
     {
-        // https://api.instagram.com/v1/users/search?q=jack&access_token=ACCESS-TOKEN
-
+        return $this->adapter->get(sprintf('%s/v1/users/search?q='.$query.'&count='.$count, self::ENDPOINT));
     }
 
 }
