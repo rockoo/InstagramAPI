@@ -1,0 +1,16 @@
+{
+    "name": "fantasyrock/instagram",
+    "description": "Instagram PHP API wrapper",
+    "require": {
+        "guzzlehttp/guzzle": "^6.0@dev",
+        "guzzlehttp/streams": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rok Nemet",
+            "email": "rok@fantasyrock.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
