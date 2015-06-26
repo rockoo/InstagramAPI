@@ -3,6 +3,7 @@
 session_start();
 
 class NativeSessionAdapter extends SessionAbstract implements SessionAdapterInterface {
+
     public function get()
     {
         return $_SESSION[self::SESSION_KEY];
@@ -15,12 +16,6 @@ class NativeSessionAdapter extends SessionAbstract implements SessionAdapterInte
 
     public function delete()
     {
-        // TODO: Implement delete() method.
+        if( isset($_SESSION[self::SESSION_KEY])) unset($_SESSION[self::SESSION_KEY]);
     }
-
-    public function update($data)
-    {
-        // TODO: Implement update() method.
-    }
-
 }

@@ -2,6 +2,9 @@
     "name": "fantasyrock/instagram",
     "description": "Instagram PHP API wrapper",
     "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
         "guzzlehttp/guzzle": "^6.0@dev",
         "guzzlehttp/streams": "*"
     },

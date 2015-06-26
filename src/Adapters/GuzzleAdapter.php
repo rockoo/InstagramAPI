@@ -4,15 +4,28 @@ use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Stream\Stream;
 use GuzzleHttp\Exception\GuzzleException;
-use Instagram\Security\CredentialsInterface;
 
-class GuzzleAdapter implements HttpAdapterInterface {
+class GuzzleAdapter extends HttpAbstract implements HttpAdapterInterface {
+    /**
+     * @var Instagram Access Token
+     */
     protected $token;
 
+    /**
+     * @var ClientInterface
+     */
     protected $client;
 
+    /**
+     * @var GuzzleException
+     */
     protected $exception;
 
+    /**
+     * @param string $token
+     * @param ClientInterface $client
+     * @param GuzzleException $exception
+     */
     public function __construct($token, ClientInterface $client = null, GuzzleException $exception = null)
     {
         $this->token       = $token;
@@ -20,15 +33,19 @@ class GuzzleAdapter implements HttpAdapterInterface {
         $this->exception   = $exception;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function get($url)
     {
-        $url = $this->urlMutator($url);
-
-        $response = $this->client->get($url);
+        $response = $this->client->get($this->urlMutator($url));
 
         return $this->_decodeStream($response->getBody());
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function post($url, array $data)
     {
         $response = $this->client->post($url, ['form_params' => $data]);
@@ -36,16 +53,25 @@ class GuzzleAdapter implements HttpAdapterInterface {
         return $this->_decodeStream($response->getBody());
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function put($url)
     {
         // TODO: Implement put() method.
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function delete($url)
     {
         // TODO: Implement delete() method.
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function requestAccessToken($credentials, $code)
     {
         $formData = [
@@ -56,10 +82,14 @@ class GuzzleAdapter implements HttpAdapterInterface {
             'code'          => $code
         ];
 
-        return $this->post('https://api.instagram.com/oauth/access_token', $formData);
+        return $this->post(sprintf('%s', self::TOKEN_ENDPOINT), $formData);
     }
 
 
+    /**
+     * @param $url
+     * @return string
+     */
     function urlMutator($url)
     {
         $append  = strpos($url, '?') ? '&' : '?';
@@ -68,6 +98,10 @@ class GuzzleAdapter implements HttpAdapterInterface {
         return $url.$append;
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     */
     private function _decodeStream($data)
     {
         $stream = Stream::factory($data);
