@@ -36,6 +36,14 @@ class Instagram {
         return new Media($this->adapter);
     }
 
+    /**
+     * @return Comment Api Object
+     */
+    public function CommentClient()
+    {
+        return new Comment($this->adapter);
+    }
+
     public function getAdapter()
     {
         return $this->adapter;

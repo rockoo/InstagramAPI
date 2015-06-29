@@ -48,6 +48,8 @@ class GuzzleAdapter extends HttpAbstract implements HttpAdapterInterface {
      */
     public function post($url, array $data)
     {
+        $data['access_token'] = $this->token;
+
         $response = $this->client->post($url, ['form_params' => $data]);
 
         return $this->_decodeStream($response->getBody());
@@ -66,7 +68,9 @@ class GuzzleAdapter extends HttpAbstract implements HttpAdapterInterface {
      */
     public function delete($url)
     {
-        // TODO: Implement delete() method.
+        $response = $this->client->delete($this->urlMutator($url));
+
+        return $this->_decodeStream($response->getBody());
     }
 
     /**

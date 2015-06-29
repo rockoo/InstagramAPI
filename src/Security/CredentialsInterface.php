@@ -8,5 +8,7 @@ interface CredentialsInterface {
 
     public function getToken();
 
+    public function deleteToken();
+
     public function getCredentials();
 }

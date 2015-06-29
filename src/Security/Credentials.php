@@ -33,6 +33,11 @@ class Credentials implements CredentialsInterface {
         return $this->session->get();
     }
 
+    public function deleteToken()
+    {
+        $this->session->delete();
+    }
+
     public function getCredentials()
     {
         return $this->credentials;
