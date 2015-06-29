@@ -36,6 +36,6 @@ class Tag extends InstagramAbstract {
      */
     public function search($query = '')
     {
-        return $this->adapter->get(sprintf('%s/v1/tags/search?q=%s', self::ENDPOINT, $query))
+        return $this->adapter->get(sprintf('%s/v1/tags/search?q=%s', self::ENDPOINT, $query));
     }
 }
