@@ -8,6 +8,6 @@ abstract class InstagramAbstract {
     protected $adapter;
 
     public function __construct(HttpAdapterInterface $adapter) {
-        $this->adapter     = $adapter;
+        $this->adapter = $adapter;
     }
 }

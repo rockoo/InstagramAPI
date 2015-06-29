@@ -2,7 +2,6 @@
 
 use Instagram\InstagramAbstract;
 
-class Tag extends InstagramAbstract
-{
+class Tag extends InstagramAbstract {
 
 }

@@ -24,10 +24,9 @@ class Comment extends InstagramAbstract {
      * @param string $mediaId
      * @param string $text
      */
-    public function createComment($mediaId, $text = '')
+    public function addComment($mediaId, $text = '')
     {
         return $this->adapter->post(sprintf('%s/v1/media/%s/comments', self::ENDPOINT, $mediaId), ['text' => $text]);
-
     }
 
     /**
