@@ -1,4 +1,4 @@
-<?php namespace Instagram\Adapters;
+<?php namespace Instagram\Adapters\Http;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

@@ -1,6 +1,6 @@
 <?php namespace Instagram;
 
-use Instagram\Adapters\HttpAdapterInterface;
+use Instagram\Adapters\Http\HttpAdapterInterface;
 
 abstract class InstagramAbstract {
     const ENDPOINT = 'https://api.instagram.com';

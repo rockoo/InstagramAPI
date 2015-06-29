@@ -1,6 +1,6 @@
 <?php namespace Instagram;
 
-use Instagram\Adapters\HttpAdapterInterface;
+use Instagram\Adapters\Http\HttpAdapterInterface;
 use Instagram\Api\User;
 use Instagram\Api\Comment;
 use Instagram\Api\Geography;

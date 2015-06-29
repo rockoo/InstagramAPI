@@ -1,8 +1,6 @@
 <?php namespace Instagram\Security;
 
-use Instagram\Adapters\HttpAdapterInterface;
-use Instagram\Adapters\SessionAdapterInterface;
-use Instagram\Security\CredentialsInterface;
+use Instagram\Adapters\Storage\SessionAdapterInterface;
 
 class Credentials implements CredentialsInterface {
     protected $credentials;

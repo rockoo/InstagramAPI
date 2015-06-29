@@ -1,4 +1,4 @@
-<?php namespace Instagram\Adapters;
+<?php namespace Instagram\Adapters\Storage;
 
 session_start();
 
