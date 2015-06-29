@@ -1,17 +1,14 @@
-<?php namespace Instagram;
+<?php namespace Fantasyrock\Instagram;
 
-use Instagram\Adapters\HttpAdapterInterface;
-use Instagram\Adapters\SessionAdapterInterface;
-use Instagram\Api\User;
-use Instagram\Api\Comment;
-use Instagram\Api\Geography;
-use Instagram\Api\Like;
-use Instagram\Api\Location;
-use Instagram\Api\Media;
-use Instagram\Api\Relationship;
-use Instagram\Api\Tag;
-use Instagram\Security\Credentials;
-use Instagram\Security\CredentialsInterface;
+use Fantasyrock\Instagram\Adapters\HttpAdapterInterface;
+use Fantasyrock\Instagram\Api\User;
+use Fantasyrock\Instagram\Api\Comment;
+use Fantasyrock\Instagram\Api\Geography;
+use Fantasyrock\Instagram\Api\Like;
+use Fantasyrock\Instagram\Api\Location;
+use Fantasyrock\Instagram\Api\Media;
+use Fantasyrock\Instagram\Api\Relationship;
+use Fantasyrock\Instagram\Api\Tag;
 
 class Instagram {
     protected $adapter;

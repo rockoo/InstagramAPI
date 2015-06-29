@@ -1,4 +1,4 @@
-<?php namespace Instagram\Security;
+<?php namespace Fantasyrock\Instagram\Security;
 
 interface CredentialsInterface {
 

@@ -1,8 +1,8 @@
-<?php namespace Instagram\Security;
+<?php namespace Fantasyrock\Instagram\Security;
 
-use Instagram\Adapters\HttpAdapterInterface;
-use Instagram\Adapters\SessionAdapterInterface;
-use Instagram\Security\CredentialsInterface;
+use Fantasyrock\Instagram\Adapters\HttpAdapterInterface;
+use Fantasyrock\Instagram\Adapters\SessionAdapterInterface;
+use Fantasyrock\Instagram\Security\CredentialsInterface;
 
 class Credentials implements CredentialsInterface {
     protected $credentials;

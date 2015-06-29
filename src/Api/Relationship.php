@@ -1,6 +1,6 @@
-<?php namespace Instagram\Api;
+<?php namespace Fantasyrock\Instagram\Api;
 
-use Instagram\InstagramAbstract;
+use Fantasyrock\Instagram\InstagramAbstract;
 
 class Relationship extends InstagramAbstract {
 

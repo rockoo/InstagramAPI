@@ -1,12 +1,12 @@
-<?php namespace Instagram\Api;
+<?php namespace Fantasyrock\Instagram\Api;
 /**
  * Class Media
  * @package Instagram\Api
  * @author Rok Nemet <rok@fantasyrock.com>
  */
 
-use Instagram\Exceptions\InstagramException;
-use Instagram\InstagramAbstract;
+use Fantasyrock\Instagram\Exceptions\InstagramException;
+use Fantasyrock\Instagram\InstagramAbstract;
 
 class Media extends InstagramAbstract
 {

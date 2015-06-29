@@ -1,4 +1,4 @@
-<?php namespace Instagram\Adapters;
+<?php namespace Fantasyrock\Instagram\Adapters;
 
 /**
  * Class SessionAbstract

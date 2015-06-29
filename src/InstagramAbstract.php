@@ -1,4 +1,4 @@
-<?php namespace Instagram;
+<?php namespace Fantasyrock\Instagram;
 
 use Instagram\Adapters\HttpAdapterInterface;
 
