@@ -23,7 +23,7 @@ class Instagram {
     /**
      * @return User Api Object
      */
-    public function UserClient()
+    public function userClient()
     {
         return new User($this->adapter);
     }
@@ -31,7 +31,7 @@ class Instagram {
     /**
      * @return Media Api Object
      */
-    public function MediaClient()
+    public function mediaClient()
     {
         return new Media($this->adapter);
     }
@@ -39,11 +39,54 @@ class Instagram {
     /**
      * @return Comment Api Object
      */
-    public function CommentClient()
+    public function commentClient()
     {
         return new Comment($this->adapter);
     }
 
+    /**
+     * @return Like Api Object
+     */
+    public function likeClient()
+    {
+        return new Like($this->adapter);
+    }
+
+    /**
+     * @return Tag Api Object
+     */
+    public function tagClient()
+    {
+        return new Tag($this->adapter);
+    }
+
+    /**
+     * @return Geography Api Object
+     */
+    public function geographyClient()
+    {
+        return new Geography($this->adapter);
+    }
+
+    /**
+     * @return Location Api Object
+     */
+    public function locationClient()
+    {
+        return new Location($this->adapter);
+    }
+
+    /**
+     * @return Relationship Api Object
+     */
+    public function relationshipClient()
+    {
+        return new Relationship($this->adapter);
+    }
+
+    /**
+     * @return HttpAdapterInterface
+     */
     public function getAdapter()
     {
         return $this->adapter;
