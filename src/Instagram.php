@@ -1,7 +1,6 @@
 <?php namespace Instagram;
 
 use Instagram\Adapters\HttpAdapterInterface;
-use Instagram\Adapters\SessionAdapterInterface;
 use Instagram\Api\User;
 use Instagram\Api\Comment;
 use Instagram\Api\Geography;
@@ -10,8 +9,6 @@ use Instagram\Api\Location;
 use Instagram\Api\Media;
 use Instagram\Api\Relationship;
 use Instagram\Api\Tag;
-use Instagram\Security\Credentials;
-use Instagram\Security\CredentialsInterface;
 
 class Instagram {
     protected $adapter;
