@@ -30,7 +30,7 @@ Package currently works with **Guzzle HTTP Client Library** and needs to be adde
 
 ## Adapters
 
-Currently the packages offers only Guzzle as HTTP adapter but you may easily build your own by extending `HttpAbstract` and implementing `HttpAdapterInterface`
+Currently the package only offers Guzzle as HTTP adapter but you may easily build your own by extending `HttpAbstract` and implementing `HttpAdapterInterface`
 
 ### Example
 ```php
@@ -96,7 +96,7 @@ $adapter = new GuzzleAdapter($credentials->getToken());
 $factory = new Instagram($adapter);
   
   
-$user = $factory->UserClient();
+$user = $factory->userClient();
 var_dump($user->getInfo());
 ```
 
