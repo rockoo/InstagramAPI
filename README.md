@@ -80,7 +80,7 @@ $credentials = new Credentials(['client_id', 'client_secret', 'redirect_uri'], $
 API needs a valid access token provided by instagram. If your application already has access to user tokens you may pass
 it directly to the HttpClientAdapter in our case GuzzleAdapter.
 
-To obtain the access key you may generate the login URL `Credentials` part of the package and requesting the access token with appropriate adapter
+To obtain the access key you may generate the login URL using `Credentials` part of the package and requesting the access token with appropriate adapter
 
 ### Example
 
@@ -127,7 +127,7 @@ $adapter = new GuzzleAdapter($credentials->getToken());
 $factory = new Instagram($adapter);
   
   
-$user = $factory->UserClient();
+$user = $factory->userClient();
 var_dump($user->getInfo());
 ```
 
