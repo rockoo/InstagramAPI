@@ -56,7 +56,7 @@ As adapters the package currently only offers support for Native Sessions. Howev
 
 require 'vendor/autoload.php';
 
-use Instagram\Adapters\NativeSessionAdapter;
+use Instagram\Adapters\Storage\NativeSessionAdapter;
 use Instagram\Security\Credentials;
 
 $storage     = new NativeSessionAdapter();
@@ -80,8 +80,8 @@ $credentials = new Credentials(['client_id', 'client_secret', 'redirect_uri'], $
 
 require 'vendor/autoload.php';
 
-use Instagram\Adapters\GuzzleAdapter;
-use Instagram\Adapters\NativeSessionAdapter;
+use Instagram\Adapters\Http\GuzzleAdapter;
+use Instagram\Adapters\Storage\NativeSessionAdapter;
 use Instagram\Security\Credentials;
 use Instagram\Instagram;
 
