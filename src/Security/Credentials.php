@@ -10,7 +10,6 @@ class Credentials implements CredentialsInterface {
     public function __construct(array $credentials, SessionAdapterInterface $session = null)
     {
         $this->credentials = $credentials;
-
         $this->session     = $session;
     }
 
@@ -23,7 +22,7 @@ class Credentials implements CredentialsInterface {
 
     public function setToken($token)
     {
-        $this->session->save($token);
+        return ($this->session->save($token)) ? true : false;
     }
 
     public function getToken()
