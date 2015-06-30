@@ -23,7 +23,7 @@ Package currently works with **Guzzle HTTP Client Library** and needs to be adde
 ```json
 {
     "require": {
-        "guzzle/guzzle": "^6.0@dev"",
+        "guzzle/guzzle": "^6.0",
     }
 }
 ```
@@ -38,7 +38,7 @@ Currently the packages offers only Guzzle as HTTP adapter but you may easily bui
 
 require 'vendor/autoload.php';
 
-use Instagram\Adapters\GuzzleAdapter;
+use Instagram\Adapters\Http\GuzzleAdapter;
 use Instagram\Instagram;
 
 $adapter = new GuzzleAdapter('access_token');
