@@ -74,6 +74,37 @@ $credentials = new Credentials(['client_id', 'client_secret', 'redirect_uri'], $
 * Geography
 * Location
 
+
+## Credentials
+
+API needs a valid access token provided by instagram. If your application already has access to user tokens you may pass
+it directly to the HttpClientAdapter in our case GuzzleAdapter.
+
+To obtain the access key you may generate the login URL `Credentials` part of the package and requesting the access token with appropriate adapter
+
+### Example
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use Instagram\Adapters\Http\GuzzleAdapter;
+use Instagram\Adapters\Storage\NativeSessionAdapter;
+use Instagram\Security\Credentials;
+use Instagram\Instagram;
+
+$storage     = new NativeSessionAdapter();
+$credentials = new Credentials([
+    'client_id'     => 'YOUR-CLIENT-ID',
+    'client_secret' => 'YOUR-CLIENT-SECRET',
+    'redirect_uri'  => 'REDIRECT-URI
+  ], $storage);
+
+// You may provide additional scope as array of desired additional permissions
+$loginUrl = $credentials->getLoginUrl(['basic', 'likes']);
+```
+
 ## Usage
 ```php
 <?php 
