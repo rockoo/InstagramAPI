@@ -11,7 +11,7 @@ class NativeSessionAdapter extends SessionAbstract implements SessionAdapterInte
 
     public function save($data)
     {
-        return $_SESSION[self::SESSION_KEY] = $data ? true : false;
+        return $_SESSION[self::SESSION_KEY] = $data ?: false;
     }
 
     public function delete()
