@@ -49,7 +49,6 @@ $factory = new Instagram($adapter);
 
 As adapters the package currently only offers support for Native Sessions. However like adapters you may easily build your own by extending `SessionAbstract` and implementing `SessionAdapterInterface`
 
-
 ### Example
 ```php
 <?php 
