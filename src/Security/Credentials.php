@@ -15,7 +15,7 @@ class Credentials implements CredentialsInterface {
 
     public function getLoginUrl(array $scope = [])
     {
-        $scope = ( !$scope) ? implode('+', $this->credentials['scope']) : implode('+', $scope);
+        $scope = ( !count($scope)) ? implode('+', $this->credentials['scope']) : implode('+', $scope);
 
         return sprintf('https://api.instagram.com/oauth/authorize/?client_id=%s&redirect_uri=%s&response_type=code&scope=%s', $this->credentials['client_id'], $this->credentials['redirect_uri'], $scope);
     }
